@@ -12,7 +12,21 @@
 		1802798A1DD2AE9C006E23EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 180279881DD2AE9C006E23EB /* Main.storyboard */; };
 		1802798C1DD2AE9C006E23EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1802798B1DD2AE9C006E23EB /* Assets.xcassets */; };
 		1802798F1DD2AE9C006E23EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1802798D1DD2AE9C006E23EB /* LaunchScreen.storyboard */; };
+		18A96F8F1DD2AF4C00870FF6 /* Delayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A96F8E1DD2AF4C00870FF6 /* Delayer.swift */; };
+		18A96FA01DD2B05D00870FF6 /* DelayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A96F901DD2AF9E00870FF6 /* DelayerTests.swift */; };
+		18A96FA21DD2B08B00870FF6 /* Delayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A96F8E1DD2AF4C00870FF6 /* Delayer.swift */; };
+		18A96FA41DD2B0D100870FF6 /* MockDelayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A96FA31DD2B0D100870FF6 /* MockDelayer.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		18A96F9B1DD2B04D00870FF6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 180279791DD2AE9C006E23EB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 180279801DD2AE9C006E23EB;
+			remoteInfo = Delayer;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		180279811DD2AE9C006E23EB /* Delayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Delayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -22,10 +36,22 @@
 		1802798B1DD2AE9C006E23EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1802798E1DD2AE9C006E23EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		180279901DD2AE9C006E23EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		18A96F8E1DD2AF4C00870FF6 /* Delayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Delayer.swift; sourceTree = "<group>"; };
+		18A96F901DD2AF9E00870FF6 /* DelayerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DelayerTests.swift; sourceTree = "<group>"; };
+		18A96F961DD2B04D00870FF6 /* DelayerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DelayerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		18A96F9A1DD2B04D00870FF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		18A96FA31DD2B0D100870FF6 /* MockDelayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockDelayer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		1802797E1DD2AE9C006E23EB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		18A96F931DD2B04D00870FF6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -39,6 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				180279831DD2AE9C006E23EB /* Delayer */,
+				18A96F971DD2B04D00870FF6 /* DelayerTests */,
 				180279821DD2AE9C006E23EB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -47,6 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				180279811DD2AE9C006E23EB /* Delayer.app */,
+				18A96F961DD2B04D00870FF6 /* DelayerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -55,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				180279841DD2AE9C006E23EB /* AppDelegate.swift */,
+				18A96F8E1DD2AF4C00870FF6 /* Delayer.swift */,
 				180279861DD2AE9C006E23EB /* ViewController.swift */,
 				180279881DD2AE9C006E23EB /* Main.storyboard */,
 				1802798B1DD2AE9C006E23EB /* Assets.xcassets */,
@@ -62,6 +91,16 @@
 				180279901DD2AE9C006E23EB /* Info.plist */,
 			);
 			path = Delayer;
+			sourceTree = "<group>";
+		};
+		18A96F971DD2B04D00870FF6 /* DelayerTests */ = {
+			isa = PBXGroup;
+			children = (
+				18A96F901DD2AF9E00870FF6 /* DelayerTests.swift */,
+				18A96FA31DD2B0D100870FF6 /* MockDelayer.swift */,
+				18A96F9A1DD2B04D00870FF6 /* Info.plist */,
+			);
+			path = DelayerTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -84,6 +123,24 @@
 			productReference = 180279811DD2AE9C006E23EB /* Delayer.app */;
 			productType = "com.apple.product-type.application";
 		};
+		18A96F951DD2B04D00870FF6 /* DelayerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 18A96F9D1DD2B04D00870FF6 /* Build configuration list for PBXNativeTarget "DelayerTests" */;
+			buildPhases = (
+				18A96F921DD2B04D00870FF6 /* Sources */,
+				18A96F931DD2B04D00870FF6 /* Frameworks */,
+				18A96F941DD2B04D00870FF6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				18A96F9C1DD2B04D00870FF6 /* PBXTargetDependency */,
+			);
+			name = DelayerTests;
+			productName = DelayerTests;
+			productReference = 18A96F961DD2B04D00870FF6 /* DelayerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -96,6 +153,10 @@
 				TargetAttributes = {
 					180279801DD2AE9C006E23EB = {
 						CreatedOnToolsVersion = 7.3.1;
+					};
+					18A96F951DD2B04D00870FF6 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 180279801DD2AE9C006E23EB;
 					};
 				};
 			};
@@ -113,6 +174,7 @@
 			projectRoot = "";
 			targets = (
 				180279801DD2AE9C006E23EB /* Delayer */,
+				18A96F951DD2B04D00870FF6 /* DelayerTests */,
 			);
 		};
 /* End PBXProject section */
@@ -128,6 +190,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		18A96F941DD2B04D00870FF6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -136,11 +205,30 @@
 			buildActionMask = 2147483647;
 			files = (
 				180279871DD2AE9C006E23EB /* ViewController.swift in Sources */,
+				18A96F8F1DD2AF4C00870FF6 /* Delayer.swift in Sources */,
 				180279851DD2AE9C006E23EB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		18A96F921DD2B04D00870FF6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18A96FA21DD2B08B00870FF6 /* Delayer.swift in Sources */,
+				18A96FA01DD2B05D00870FF6 /* DelayerTests.swift in Sources */,
+				18A96FA41DD2B0D100870FF6 /* MockDelayer.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		18A96F9C1DD2B04D00870FF6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 180279801DD2AE9C006E23EB /* Delayer */;
+			targetProxy = 18A96F9B1DD2B04D00870FF6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		180279881DD2AE9C006E23EB /* Main.storyboard */ = {
@@ -267,6 +355,30 @@
 			};
 			name = Release;
 		};
+		18A96F9E1DD2B04D00870FF6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = DelayerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lin.david.DelayerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Delayer.app/Delayer";
+			};
+			name = Debug;
+		};
+		18A96F9F1DD2B04D00870FF6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = DelayerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lin.david.DelayerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Delayer.app/Delayer";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -284,6 +396,15 @@
 			buildConfigurations = (
 				180279941DD2AE9D006E23EB /* Debug */,
 				180279951DD2AE9D006E23EB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		18A96F9D1DD2B04D00870FF6 /* Build configuration list for PBXNativeTarget "DelayerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				18A96F9E1DD2B04D00870FF6 /* Debug */,
+				18A96F9F1DD2B04D00870FF6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
