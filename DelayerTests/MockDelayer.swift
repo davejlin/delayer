@@ -22,7 +22,7 @@ class MockDelayer: DelayerProtocol {
 class MockDelayerManagerFactory: DelayerManagerFactoryProtocol {
     let mockDelayerManager = MockDelayerManager()
     
-    func createDelayerManager(nMax: Int) -> DelayerManagerProtocol {
+    func createDelayerManager(nMax nMax: Int) -> DelayerManagerProtocol {
         return mockDelayerManager
     }
 }

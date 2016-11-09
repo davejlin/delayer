@@ -115,7 +115,7 @@ class DelayerTests: XCTestCase {
     
     func testDelayerManagerFactory() {
         let delayerManagerFactory = DelayerManagerFactory(delayerFactory: mockDelayerFactory)
-        let delayerManager = delayerManagerFactory.createDelayerManager(nMax)
+        let delayerManager = delayerManagerFactory.createDelayerManager(nMax: nMax)
         
         XCTAssertTrue((delayerManager as Any) is DelayerManagerProtocol)
     }

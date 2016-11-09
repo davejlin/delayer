@@ -22,7 +22,7 @@ class Delayer: DelayerProtocol {
 }
 
 protocol DelayerManagerFactoryProtocol {
-    func createDelayerManager(nMax: Int) -> DelayerManagerProtocol
+    func createDelayerManager(nMax nMax: Int) -> DelayerManagerProtocol
 }
 
 class DelayerManagerFactory: DelayerManagerFactoryProtocol {
@@ -32,7 +32,7 @@ class DelayerManagerFactory: DelayerManagerFactoryProtocol {
         self.delayerFactory = delayerFactory
     }
     
-    func createDelayerManager(nMax: Int) -> DelayerManagerProtocol {
+    func createDelayerManager(nMax nMax: Int) -> DelayerManagerProtocol {
         return DelayerManager(delayerFactory: delayerFactory, nMax: nMax)
     }
 }
