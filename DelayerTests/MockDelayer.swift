@@ -10,11 +10,11 @@ import Foundation
 
 class MockDelayer: DelayerProtocol {
     var delayFunction = {
-        (seconds: Double, closure: () -> Void) in
+        (seconds: Double, closure: @escaping () -> Void) in
         closure()
     }
     
-    func delay(forSeconds seconds: Double, closure: () -> Void) {
+    func delay(forSeconds seconds: Double, closure: @escaping () -> Void) {
         delayFunction(seconds, closure)
     }
 }
@@ -22,7 +22,7 @@ class MockDelayer: DelayerProtocol {
 class MockDelayerManagerFactory: DelayerManagerFactoryProtocol {
     let mockDelayerManager = MockDelayerManager()
     
-    func createDelayerManager(nMax nMax: Int) -> DelayerManagerProtocol {
+    func createDelayerManager(nMax: Int) -> DelayerManagerProtocol {
         return mockDelayerManager
     }
 }
@@ -30,7 +30,7 @@ class MockDelayerManagerFactory: DelayerManagerFactoryProtocol {
 class MockDelayerManager: DelayerManagerProtocol {
     var isAddDelayerCalled = false
     var nResetCalled = 0
-    func addDelayer(forSeconds seconds: Double, closure: () -> Void) {
+    func addDelayer(forSeconds seconds: Double, closure: @escaping () -> Void) {
         isAddDelayerCalled = true
     }
     func reset() {
@@ -39,7 +39,7 @@ class MockDelayerManager: DelayerManagerProtocol {
 }
 
 class MockDelayerFactory: DelayerFactoryProtocol {
-    func createDelayerObject(forSeconds seconds: Double, closure: () -> Void) -> DelayerObjectProtocol {
+    func createDelayerObject(forSeconds seconds: Double, closure: @escaping () -> Void) -> DelayerObjectProtocol {
         return MockDelayerObject()
     }
 }

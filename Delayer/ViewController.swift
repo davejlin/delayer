@@ -30,7 +30,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         textView.text = "Press Start button to begin a \(secondsDelay) second delay"
-        startButton.setTitle("Start \(secondsDelay) second delay", forState: .Normal)
+        startButton.setTitle("Start \(secondsDelay) second delay", for: UIControlState())
     }
 
     override func didReceiveMemoryWarning() {
@@ -38,7 +38,7 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    @IBAction func startButtonPressed(sender: AnyObject) {
+    @IBAction func startButtonPressed(_ sender: AnyObject) {
         textView.text = "\(secondsDelay) second delay started"
         delayerManager.reset()
         
@@ -55,7 +55,7 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBAction func cancelButtonPressed(sender: AnyObject) {
+    @IBAction func cancelButtonPressed(_ sender: AnyObject) {
         textView.text = "Press Start button to begin a 10 second delay"
         delayerManager.reset()
     }

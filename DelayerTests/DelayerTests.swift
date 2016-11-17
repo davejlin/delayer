@@ -26,7 +26,7 @@ class DelayerTests: XCTestCase {
     }
     
     func testDelayer() {
-        let expectation = expectationWithDescription("delayer should delay")
+        let expectation = self.expectation(description: "delayer should delay")
         let delayInterval = 0.5
         let delayer = Delayer()
         
@@ -34,21 +34,21 @@ class DelayerTests: XCTestCase {
             expectation.fulfill()
         }
         
-        waitForExpectationsWithTimeout(2.0*delayInterval, handler: nil)
+        waitForExpectations(timeout: 2.0*delayInterval, handler: nil)
     }
     
     func testDelayerObject() {
-        let expectation = expectationWithDescription("delayer object should delay")
+        let expectation = self.expectation(description: "delayer object should delay")
         
         _ = DelayerObject(delayer: mockDelayer, forSeconds: delayInterval) {
             expectation.fulfill()
         }
         
-        waitForExpectationsWithTimeout(2.0*delayInterval, handler: nil)
+        waitForExpectations(timeout: 2.0*delayInterval, handler: nil)
     }
     
     func testDelayerObject_CancelBlock() {
-        let expectation = expectationWithDescription("delayer object block should be canceled")
+        let expectation = self.expectation(description: "delayer object block should be canceled")
         
         let delayerObject = DelayerObject(delayer: mockDelayer, forSeconds: delayInterval) {
             XCTFail()
@@ -60,11 +60,11 @@ class DelayerTests: XCTestCase {
             expectation.fulfill()
         }
         
-        waitForExpectationsWithTimeout(3.0*delayInterval, handler: nil)
+        waitForExpectations(timeout: 3.0*delayInterval, handler: nil)
     }
     
     func testDelayerFactory() {
-        let expectation = expectationWithDescription("delayer factory should create delayer object")
+        let expectation = self.expectation(description: "delayer factory should create delayer object")
         
         let delayerFactory = DelayerFactory(delayer: mockDelayer)
         let delayerObject = delayerFactory.createDelayerObject(forSeconds: delayInterval) {
@@ -73,7 +73,7 @@ class DelayerTests: XCTestCase {
         
         XCTAssertTrue((delayerObject as Any) is DelayerObjectProtocol)
         
-        waitForExpectationsWithTimeout(2.0*delayInterval, handler: nil)
+        waitForExpectations(timeout: 2.0*delayInterval, handler: nil)
     }
     
     func testDelayerManager_AddDelayerStopsAtMaximum() {
@@ -88,7 +88,7 @@ class DelayerTests: XCTestCase {
     }
     
     func testDelayerManager_Reset() {
-        let expectation = expectationWithDescription("delayer manager reset cancels and reinits delayers")
+        let expectation = self.expectation(description: "delayer manager reset cancels and reinits delayers")
         
         // note: we need to use real Delayer and DelayerFactory in this test to ensure reset calls cancelAll
         let realDelayer = Delayer()
@@ -110,7 +110,7 @@ class DelayerTests: XCTestCase {
             expectation.fulfill()
         }
         
-        waitForExpectationsWithTimeout(3.0*delayInterval, handler: nil)
+        waitForExpectations(timeout: 3.0*delayInterval, handler: nil)
     }
     
     func testDelayerManagerFactory() {
@@ -120,9 +120,8 @@ class DelayerTests: XCTestCase {
         XCTAssertTrue((delayerManager as Any) is DelayerManagerProtocol)
     }
     
-    private func delayFunction(seconds: Double, closure: () -> Void) {
-        let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(seconds * Double(NSEC_PER_SEC)))
-        dispatch_after(delayTime, dispatch_get_main_queue()) {
+    fileprivate func delayFunction(_ seconds: Double, closure: @escaping () -> Void) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
             closure()
         }
     }
